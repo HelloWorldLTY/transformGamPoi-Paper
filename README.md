@@ -33,3 +33,7 @@ The repository is organized into four folders. The root directory contains some 
 * [plot_deep_sequenced_overlap.Rmd](https://htmlpreview.github.io/?https://github.com/const-ae/transformGamPoi-Paper/blob/master/notebooks/plot_deep_sequenced_overlap.html) generates Extended Data Fig. S8.
 * [plot_clustering_results.Rmd](https://htmlpreview.github.io/?https://github.com/const-ae/transformGamPoi-Paper/blob/master/notebooks/plot_clustering_results.html) generates Extended Data Fig. S9.
 * [plot_stratified_performance.Rmd](https://htmlpreview.github.io/?https://github.com/const-ae/transformGamPoi-Paper/blob/master/notebooks/plot_stratified_performance.html) generates Extended Data Figs. S10.
+
+# Features for final project
+
+Please check benchmark/src for the functions we used in the final project of BIS 691.
