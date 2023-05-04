@@ -1,0 +1,51 @@
+---
+title: "plot_simulation"
+output: html_document
+date: "2023-04-30"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+library(readxl)
+library(ggplot2)
+```
+```{r}
+data = readxl::read_excel("simulation result.xlsx")
+```
+
+```{r}
+data = data[data$seed == 2,]
+data$alpha = as.factor(data$alpha)
+```
+```{r}
+{library(ggplot2)
+  library(reshape2)
+  library(cowplot)
+}
+```
+
+```{r}
+#######绘图#########
+##########用SE(标准误差/标准误)进行作图###########
+a<-ggplot(data, aes(x=alpha, y=mean_knn_overlap, fill=transformation)) +
+  geom_bar(stat="identity", position=position_dodge(),
+           color="black", width=.8) +
+  theme_bw()+
+  scale_y_continuous(expand=c(0,0))+
+  coord_cartesian(ylim = c(0, 1))+
+  theme(axis.text.x = element_text(size = 14, color = "black"))+##设置x轴字体大小
+  theme(axis.text.y = element_text(size = 14, color = "black"))+##设置y轴字体大小
+  theme(title=element_text(size=13))+#设置标题字体大小
+  theme_bw()
+a
+```
+
